@@ -1,0 +1,2883 @@
+{
+ "meta": {
+  "article": "Spatial Transferability of Explainable Machine Learning for Predicting Pre-Treatment Tuberculosis Loss to Follow-up Across Districts and Cities in West Java, Indonesia",
+  "journal": "BMC Medical Informatics and Decision Making",
+  "setting": "West Java Province, Indonesia",
+  "registration_window": "1 January to 30 September 2024",
+  "data_cutoff": "29 September 2025",
+  "followup_days_min": 364,
+  "followup_days_max": 637,
+  "n_diagnosed": 174201,
+  "n_ltfu": 15898,
+  "ltfu_pct": 9.13,
+  "n_areas": 27,
+  "n_lodo_cohort": 168381,
+  "privacy": "This page contains aggregate results only. No individual patient record, and no variable that could identify a patient, is published here."
+ },
+ "predictor_values": {
+  "n": 174140,
+  "ltfu_pct": 9.13,
+  "pseudo_r2": 0.207,
+  "features": [
+   {
+    "feature": "Sex",
+    "col": "sex",
+    "ref": "Female",
+    "values": [
+     {
+      "val": "Female",
+      "n": 77633,
+      "ltfu": 8.35,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "Male",
+      "n": 96507,
+      "ltfu": 9.75,
+      "or_": 1.11,
+      "lo": 1.07,
+      "hi": 1.15,
+      "p": 2.3188891460127966e-08,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "HIV status",
+    "col": "hiv",
+    "ref": "Not HIV",
+    "values": [
+     {
+      "val": "Not HIV",
+      "n": 100803,
+      "ltfu": 2.01,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "HIV positive",
+      "n": 2528,
+      "ltfu": 8.07,
+      "or_": 4.38,
+      "lo": 3.76,
+      "hi": 5.11,
+      "p": 2.0968778376754082e-80,
+      "ref": false
+     },
+     {
+      "val": "Not recorded",
+      "n": 70809,
+      "ltfu": 19.3,
+      "or_": 16.18,
+      "lo": 15.37,
+      "hi": 17.02,
+      "p": 0.0,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "Diagnosis method",
+    "col": "dx",
+    "ref": "Not recorded",
+    "values": [
+     {
+      "val": "Not recorded",
+      "n": 72138,
+      "ltfu": 6.18,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "TCM",
+      "n": 102002,
+      "ltfu": 11.21,
+      "or_": 2.11,
+      "lo": 2.02,
+      "hi": 2.21,
+      "p": 8.797215970480599e-240,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "Facility type",
+    "col": "fac",
+    "ref": "Puskesmas",
+    "values": [
+     {
+      "val": "Puskesmas",
+      "n": 59480,
+      "ltfu": 6.23,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "Hospital",
+      "n": 107863,
+      "ltfu": 10.21,
+      "or_": 0.92,
+      "lo": 0.88,
+      "hi": 0.96,
+      "p": 0.00037634549534341276,
+      "ref": false
+     },
+     {
+      "val": "Clinic",
+      "n": 3834,
+      "ltfu": 19.33,
+      "or_": 1.79,
+      "lo": 1.62,
+      "hi": 1.97,
+      "p": 1.1760688216502618e-31,
+      "ref": false
+     },
+     {
+      "val": "Other",
+      "n": 2963,
+      "ltfu": 14.58,
+      "or_": 1.68,
+      "lo": 1.49,
+      "hi": 1.9,
+      "p": 5.56669132548625e-17,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "Treatment history",
+    "col": "hist",
+    "ref": "New",
+    "values": [
+     {
+      "val": "New",
+      "n": 138461,
+      "ltfu": 8.22,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "Relapse",
+      "n": 5400,
+      "ltfu": 11.56,
+      "or_": 1.26,
+      "lo": 1.15,
+      "hi": 1.39,
+      "p": 1.4971361215499362e-06,
+      "ref": false
+     },
+     {
+      "val": "After default",
+      "n": 1894,
+      "ltfu": 11.83,
+      "or_": 1.33,
+      "lo": 1.14,
+      "hi": 1.55,
+      "p": 0.0003751635295980775,
+      "ref": false
+     },
+     {
+      "val": "After failure",
+      "n": 1224,
+      "ltfu": 16.75,
+      "or_": 2.63,
+      "lo": 2.21,
+      "hi": 3.13,
+      "p": 4.203546361652073e-27,
+      "ref": false
+     },
+     {
+      "val": "Unknown",
+      "n": 27077,
+      "ltfu": 12.73,
+      "or_": 1.19,
+      "lo": 1.14,
+      "hi": 1.25,
+      "p": 2.0131561275722602e-14,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "Diabetes",
+    "col": "dm",
+    "ref": "No",
+    "values": [
+     {
+      "val": "No",
+      "n": 63015,
+      "ltfu": 7.17,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "Yes",
+      "n": 6142,
+      "ltfu": 11.45,
+      "or_": 1.09,
+      "lo": 0.99,
+      "hi": 1.2,
+      "p": 0.06916815906587057,
+      "ref": false
+     },
+     {
+      "val": "Unknown",
+      "n": 104983,
+      "ltfu": 10.17,
+      "or_": 0.92,
+      "lo": 0.89,
+      "hi": 0.96,
+      "p": 0.00018040959924658527,
+      "ref": false
+     }
+    ]
+   },
+   {
+    "feature": "Age band",
+    "col": "age",
+    "ref": "25-44",
+    "values": [
+     {
+      "val": "25-44",
+      "n": 46460,
+      "ltfu": 9.51,
+      "or_": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "p": null,
+      "ref": true
+     },
+     {
+      "val": "0-14",
+      "n": 38893,
+      "ltfu": 4.25,
+      "or_": 0.39,
+      "lo": 0.36,
+      "hi": 0.41,
+      "p": 1.9066361975240554e-175,
+      "ref": false
+     },
+     {
+      "val": "15-24",
+      "n": 25658,
+      "ltfu": 7.72,
+      "or_": 0.82,
+      "lo": 0.77,
+      "hi": 0.87,
+      "p": 6.43034073364995e-11,
+      "ref": false
+     },
+     {
+      "val": "45-64",
+      "n": 46662,
+      "ltfu": 11.49,
+      "or_": 1.13,
+      "lo": 1.08,
+      "hi": 1.19,
+      "p": 1.1416841418760945e-07,
+      "ref": false
+     },
+     {
+      "val": "65+",
+      "n": 16467,
+      "ltfu": 15.07,
+      "or_": 1.44,
+      "lo": 1.36,
+      "hi": 1.53,
+      "p": 1.246165561319322e-34,
+      "ref": false
+     }
+    ]
+   }
+  ]
+ },
+ "per_district": [
+  {
+   "area": "Kab. Bogor",
+   "n": 23647,
+   "events": 1753,
+   "observed_pct": 7.41,
+   "predicted_pct": 9.26,
+   "gap_pp": -1.85,
+   "auc": 0.804,
+   "auc_ci": [
+    0.794,
+    0.815
+   ],
+   "hiv_not_recorded_pct": 34.8,
+   "molecular_pct": 71.51,
+   "hospital_pct": 63.98,
+   "age_median": 37.0
+  },
+  {
+   "area": "Kab. Bandung",
+   "n": 12187,
+   "events": 867,
+   "observed_pct": 7.11,
+   "predicted_pct": 10.43,
+   "gap_pp": -3.31,
+   "auc": 0.773,
+   "auc_ci": [
+    0.759,
+    0.789
+   ],
+   "hiv_not_recorded_pct": 55.52,
+   "molecular_pct": 52.88,
+   "hospital_pct": 70.16,
+   "age_median": 27.0
+  },
+  {
+   "area": "Kab. Sukabumi",
+   "n": 10202,
+   "events": 740,
+   "observed_pct": 7.25,
+   "predicted_pct": 8.66,
+   "gap_pp": -1.41,
+   "auc": 0.853,
+   "auc_ci": [
+    0.84,
+    0.866
+   ],
+   "hiv_not_recorded_pct": 35.93,
+   "molecular_pct": 53.03,
+   "hospital_pct": 55.85,
+   "age_median": 32.0
+  },
+  {
+   "area": "Kota Bekasi",
+   "n": 8597,
+   "events": 763,
+   "observed_pct": 8.88,
+   "predicted_pct": 8.79,
+   "gap_pp": 0.09,
+   "auc": 0.824,
+   "auc_ci": [
+    0.807,
+    0.841
+   ],
+   "hiv_not_recorded_pct": 41.6,
+   "molecular_pct": 46.62,
+   "hospital_pct": 72.47,
+   "age_median": 36.0
+  },
+  {
+   "area": "Kab. Garut",
+   "n": 7300,
+   "events": 438,
+   "observed_pct": 6.0,
+   "predicted_pct": 13.84,
+   "gap_pp": -7.84,
+   "auc": 0.727,
+   "auc_ci": [
+    0.706,
+    0.748
+   ],
+   "hiv_not_recorded_pct": 61.15,
+   "molecular_pct": 50.34,
+   "hospital_pct": 46.38,
+   "age_median": 27.0
+  },
+  {
+   "area": "Kota Bandung",
+   "n": 10356,
+   "events": 588,
+   "observed_pct": 5.68,
+   "predicted_pct": 7.99,
+   "gap_pp": -2.32,
+   "auc": 0.834,
+   "auc_ci": [
+    0.819,
+    0.849
+   ],
+   "hiv_not_recorded_pct": 44.0,
+   "molecular_pct": 49.98,
+   "hospital_pct": 66.34,
+   "age_median": 25.0
+  },
+  {
+   "area": "Kab. Tasikmalaya",
+   "n": 4482,
+   "events": 430,
+   "observed_pct": 9.59,
+   "predicted_pct": 9.58,
+   "gap_pp": 0.01,
+   "auc": 0.85,
+   "auc_ci": [
+    0.831,
+    0.869
+   ],
+   "hiv_not_recorded_pct": 36.55,
+   "molecular_pct": 71.87,
+   "hospital_pct": 31.64,
+   "age_median": 36.0
+  },
+  {
+   "area": "Kab. Bandung Barat",
+   "n": 5269,
+   "events": 385,
+   "observed_pct": 7.31,
+   "predicted_pct": 6.44,
+   "gap_pp": 0.86,
+   "auc": 0.91,
+   "auc_ci": [
+    0.897,
+    0.923
+   ],
+   "hiv_not_recorded_pct": 28.28,
+   "molecular_pct": 55.97,
+   "hospital_pct": 56.99,
+   "age_median": 29.0
+  },
+  {
+   "area": "Kab. Cirebon",
+   "n": 7837,
+   "events": 557,
+   "observed_pct": 7.11,
+   "predicted_pct": 6.56,
+   "gap_pp": 0.55,
+   "auc": 0.837,
+   "auc_ci": [
+    0.815,
+    0.857
+   ],
+   "hiv_not_recorded_pct": 29.25,
+   "molecular_pct": 61.5,
+   "hospital_pct": 70.55,
+   "age_median": 40.0
+  },
+  {
+   "area": "Kab. Bekasi",
+   "n": 11859,
+   "events": 1801,
+   "observed_pct": 15.19,
+   "predicted_pct": 10.33,
+   "gap_pp": 4.85,
+   "auc": 0.813,
+   "auc_ci": [
+    0.803,
+    0.823
+   ],
+   "hiv_not_recorded_pct": 49.45,
+   "molecular_pct": 51.77,
+   "hospital_pct": 73.25,
+   "age_median": 39.0
+  },
+  {
+   "area": "Kab. Indramayu",
+   "n": 5056,
+   "events": 802,
+   "observed_pct": 15.86,
+   "predicted_pct": 12.3,
+   "gap_pp": 3.56,
+   "auc": 0.795,
+   "auc_ci": [
+    0.779,
+    0.812
+   ],
+   "hiv_not_recorded_pct": 47.31,
+   "molecular_pct": 64.58,
+   "hospital_pct": 57.4,
+   "age_median": 43.0
+  },
+  {
+   "area": "Kab. Cianjur",
+   "n": 9106,
+   "events": 1496,
+   "observed_pct": 16.43,
+   "predicted_pct": 10.43,
+   "gap_pp": 6.0,
+   "auc": 0.845,
+   "auc_ci": [
+    0.836,
+    0.854
+   ],
+   "hiv_not_recorded_pct": 49.93,
+   "molecular_pct": 52.34,
+   "hospital_pct": 49.96,
+   "age_median": 28.0
+  },
+  {
+   "area": "Kota Bogor",
+   "n": 6077,
+   "events": 518,
+   "observed_pct": 8.52,
+   "predicted_pct": 5.84,
+   "gap_pp": 2.69,
+   "auc": 0.863,
+   "auc_ci": [
+    0.845,
+    0.882
+   ],
+   "hiv_not_recorded_pct": 23.04,
+   "molecular_pct": 59.34,
+   "hospital_pct": 58.19,
+   "age_median": 35.0
+  },
+  {
+   "area": "Kab. Karawang",
+   "n": 9167,
+   "events": 997,
+   "observed_pct": 10.88,
+   "predicted_pct": 8.22,
+   "gap_pp": 2.66,
+   "auc": 0.82,
+   "auc_ci": [
+    0.804,
+    0.834
+   ],
+   "hiv_not_recorded_pct": 35.45,
+   "molecular_pct": 63.34,
+   "hospital_pct": 68.05,
+   "age_median": 38.0
+  },
+  {
+   "area": "Kota Depok",
+   "n": 5699,
+   "events": 431,
+   "observed_pct": 7.56,
+   "predicted_pct": 11.16,
+   "gap_pp": -3.59,
+   "auc": 0.818,
+   "auc_ci": [
+    0.799,
+    0.838
+   ],
+   "hiv_not_recorded_pct": 49.76,
+   "molecular_pct": 64.43,
+   "hospital_pct": 66.61,
+   "age_median": 38.0
+  },
+  {
+   "area": "Kab. Subang",
+   "n": 5533,
+   "events": 441,
+   "observed_pct": 7.97,
+   "predicted_pct": 9.15,
+   "gap_pp": -1.18,
+   "auc": 0.79,
+   "auc_ci": [
+    0.765,
+    0.813
+   ],
+   "hiv_not_recorded_pct": 38.59,
+   "molecular_pct": 59.17,
+   "hospital_pct": 42.22,
+   "age_median": 36.0
+  },
+  {
+   "area": "Kab. Purwakarta",
+   "n": 3270,
+   "events": 277,
+   "observed_pct": 8.47,
+   "predicted_pct": 8.05,
+   "gap_pp": 0.42,
+   "auc": 0.857,
+   "auc_ci": [
+    0.833,
+    0.879
+   ],
+   "hiv_not_recorded_pct": 35.93,
+   "molecular_pct": 58.38,
+   "hospital_pct": 63.58,
+   "age_median": 29.5
+  },
+  {
+   "area": "Kab. Majalengka",
+   "n": 3669,
+   "events": 223,
+   "observed_pct": 6.08,
+   "predicted_pct": 5.56,
+   "gap_pp": 0.52,
+   "auc": 0.924,
+   "auc_ci": [
+    0.903,
+    0.942
+   ],
+   "hiv_not_recorded_pct": 19.05,
+   "molecular_pct": 74.93,
+   "hospital_pct": 58.87,
+   "age_median": 39.0
+  },
+  {
+   "area": "Kab. Sumedang",
+   "n": 3512,
+   "events": 487,
+   "observed_pct": 13.87,
+   "predicted_pct": 6.63,
+   "gap_pp": 7.24,
+   "auc": 0.692,
+   "auc_ci": [
+    0.663,
+    0.72
+   ],
+   "hiv_not_recorded_pct": 31.32,
+   "molecular_pct": 48.43,
+   "hospital_pct": 39.55,
+   "age_median": 31.0
+  },
+  {
+   "area": "Kab. Ciamis",
+   "n": 3094,
+   "events": 224,
+   "observed_pct": 7.24,
+   "predicted_pct": 10.69,
+   "gap_pp": -3.45,
+   "auc": 0.83,
+   "auc_ci": [
+    0.808,
+    0.85
+   ],
+   "hiv_not_recorded_pct": 44.6,
+   "molecular_pct": 64.96,
+   "hospital_pct": 58.69,
+   "age_median": 41.0
+  },
+  {
+   "area": "Kab. Pangandaran",
+   "n": 790,
+   "events": 26,
+   "observed_pct": 3.29,
+   "predicted_pct": 6.76,
+   "gap_pp": -3.47,
+   "auc": 0.917,
+   "auc_ci": [
+    0.866,
+    0.954
+   ],
+   "hiv_not_recorded_pct": 24.94,
+   "molecular_pct": 68.86,
+   "hospital_pct": 41.39,
+   "age_median": 45.0
+  },
+  {
+   "area": "Kab. Kuningan",
+   "n": 3132,
+   "events": 326,
+   "observed_pct": 10.41,
+   "predicted_pct": 7.63,
+   "gap_pp": 2.78,
+   "auc": 0.832,
+   "auc_ci": [
+    0.808,
+    0.859
+   ],
+   "hiv_not_recorded_pct": 32.63,
+   "molecular_pct": 70.63,
+   "hospital_pct": 64.5,
+   "age_median": 41.0
+  },
+  {
+   "area": "Kota Tasikmalaya",
+   "n": 2613,
+   "events": 195,
+   "observed_pct": 7.46,
+   "predicted_pct": 5.99,
+   "gap_pp": 1.47,
+   "auc": 0.891,
+   "auc_ci": [
+    0.867,
+    0.914
+   ],
+   "hiv_not_recorded_pct": 35.67,
+   "molecular_pct": 52.35,
+   "hospital_pct": 54.27,
+   "age_median": 24.0
+  },
+  {
+   "area": "Kota Cimahi",
+   "n": 2250,
+   "events": 133,
+   "observed_pct": 5.91,
+   "predicted_pct": 6.72,
+   "gap_pp": -0.81,
+   "auc": 0.895,
+   "auc_ci": [
+    0.863,
+    0.925
+   ],
+   "hiv_not_recorded_pct": 33.51,
+   "molecular_pct": 51.47,
+   "hospital_pct": 71.69,
+   "age_median": 25.0
+  },
+  {
+   "area": "Kota Cirebon",
+   "n": 1543,
+   "events": 155,
+   "observed_pct": 10.05,
+   "predicted_pct": 8.23,
+   "gap_pp": 1.82,
+   "auc": 0.793,
+   "auc_ci": [
+    0.752,
+    0.832
+   ],
+   "hiv_not_recorded_pct": 38.56,
+   "molecular_pct": 62.09,
+   "hospital_pct": 70.84,
+   "age_median": 34.0
+  },
+  {
+   "area": "Kota Sukabumi",
+   "n": 1425,
+   "events": 123,
+   "observed_pct": 8.63,
+   "predicted_pct": 8.82,
+   "gap_pp": -0.19,
+   "auc": 0.868,
+   "auc_ci": [
+    0.837,
+    0.896
+   ],
+   "hiv_not_recorded_pct": 35.58,
+   "molecular_pct": 55.72,
+   "hospital_pct": 65.54,
+   "age_median": 30.0
+  },
+  {
+   "area": "Kota Banjar",
+   "n": 709,
+   "events": 28,
+   "observed_pct": 3.95,
+   "predicted_pct": 10.48,
+   "gap_pp": -6.53,
+   "auc": 0.857,
+   "auc_ci": [
+    0.787,
+    0.913
+   ],
+   "hiv_not_recorded_pct": 52.89,
+   "molecular_pct": 57.69,
+   "hospital_pct": 69.25,
+   "age_median": 28.0
+  }
+ ],
+ "transferability_summary": {
+  "predictors": [
+   "age",
+   "sex",
+   "hiv",
+   "dm",
+   "hist",
+   "anat",
+   "fac",
+   "own",
+   "entry",
+   "dx",
+   "anak"
+  ],
+  "n_predictors": 11,
+  "pooled_auc": 0.829,
+  "median_auc": 0.834,
+  "min_auc": 0.692,
+  "max_auc": 0.924,
+  "mean_abs_gap_pp": 2.65,
+  "n_auc_below_075": 2,
+  "corr_hiv_notrecorded_vs_auc": -0.529,
+  "corr_hiv_notrecorded_vs_abs_gap": 0.56,
+  "corr_events_vs_auc": -0.312,
+  "provincial_sensitivity": 0.776,
+  "provincial_specificity": 0.778,
+  "class_failure_lowest_auc_areas": [
+   {
+    "kab": "Kab. Sumedang",
+    "auc": 0.692,
+    "sens": 0.513,
+    "spec": 0.875,
+    "n_pos": 487
+   },
+   {
+    "kab": "Kab. Garut",
+    "auc": 0.727,
+    "sens": 0.831,
+    "spec": 0.577,
+    "n_pos": 438
+   },
+   {
+    "kab": "Kab. Bandung",
+    "auc": 0.773,
+    "sens": 0.751,
+    "spec": 0.723,
+    "n_pos": 867
+   },
+   {
+    "kab": "Kab. Subang",
+    "auc": 0.79,
+    "sens": 0.714,
+    "spec": 0.781,
+    "n_pos": 441
+   },
+   {
+    "kab": "Kota Cirebon",
+    "auc": 0.793,
+    "sens": 0.755,
+    "spec": 0.816,
+    "n_pos": 155
+   },
+   {
+    "kab": "Kab. Indramayu",
+    "auc": 0.795,
+    "sens": 0.736,
+    "spec": 0.705,
+    "n_pos": 802
+   }
+  ]
+ },
+ "spatial": {
+  "moran": {
+   "knn5": {
+    "I": -0.0195,
+    "EI": -0.0385,
+    "z": 0.1724,
+    "p": 0.3877,
+    "sims_mean": -0.0377,
+    "sims_std": 0.1051
+   },
+   "knn6": {
+    "I": -0.0375,
+    "EI": -0.0385,
+    "z": 0.0022,
+    "p": 0.4472,
+    "sims_mean": -0.0377,
+    "sims_std": 0.0933
+   },
+   "queen": {
+    "I": -0.027,
+    "EI": -0.0385,
+    "z": 0.0671,
+    "p": 0.462,
+    "sims_mean": -0.0361,
+    "sims_std": 0.1365
+   }
+  },
+  "lisa_significant": [
+   {
+    "kab": "Kab. Tasikmalaya",
+    "gap": 0.01,
+    "quad": "HL",
+    "p": 0.0144
+   },
+   {
+    "kab": "Kab. Majalengka",
+    "gap": 0.52,
+    "quad": "HH",
+    "p": 0.0329
+   },
+   {
+    "kab": "Kab. Pangandaran",
+    "gap": -3.47,
+    "quad": "LL",
+    "p": 0.0323
+   },
+   {
+    "kab": "Kota Tasikmalaya",
+    "gap": 1.47,
+    "quad": "HL",
+    "p": 0.0088
+   }
+  ],
+  "note": "Permutation test with 9,999 permutations on the per-area calibration gap."
+ },
+ "adjusted_odds_ratios": [
+  {
+   "area": "Kab. Sumedang",
+   "n": 3512,
+   "observed_pct": 13.87,
+   "odds_ratio": 2.54,
+   "ci": [
+    2.25,
+    2.87
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Cianjur",
+   "n": 9108,
+   "observed_pct": 16.43,
+   "odds_ratio": 1.9,
+   "ci": [
+    1.75,
+    2.07
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Bekasi",
+   "n": 11862,
+   "observed_pct": 15.18,
+   "odds_ratio": 1.76,
+   "ci": [
+    1.63,
+    1.89
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kota Bogor",
+   "n": 6078,
+   "observed_pct": 8.52,
+   "odds_ratio": 1.7,
+   "ci": [
+    1.52,
+    1.9
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Karawang",
+   "n": 9170,
+   "observed_pct": 10.87,
+   "odds_ratio": 1.63,
+   "ci": [
+    1.49,
+    1.78
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Indramayu",
+   "n": 5057,
+   "observed_pct": 15.88,
+   "odds_ratio": 1.62,
+   "ci": [
+    1.47,
+    1.79
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Kuningan",
+   "n": 3134,
+   "observed_pct": 10.43,
+   "odds_ratio": 1.57,
+   "ci": [
+    1.37,
+    1.8
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kota Cirebon",
+   "n": 1544,
+   "observed_pct": 10.04,
+   "odds_ratio": 1.42,
+   "ci": [
+    1.18,
+    1.72
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Majalengka",
+   "n": 3670,
+   "observed_pct": 6.1,
+   "odds_ratio": 1.37,
+   "ci": [
+    1.17,
+    1.6
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kota Tasikmalaya",
+   "n": 2613,
+   "observed_pct": 7.46,
+   "odds_ratio": 1.31,
+   "ci": [
+    1.11,
+    1.55
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Bandung Barat",
+   "n": 5270,
+   "observed_pct": 7.31,
+   "odds_ratio": 1.26,
+   "ci": [
+    1.11,
+    1.43
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Purwakarta",
+   "n": 3272,
+   "observed_pct": 8.47,
+   "odds_ratio": 1.24,
+   "ci": [
+    1.07,
+    1.43
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kota Sukabumi",
+   "n": 1425,
+   "observed_pct": 8.63,
+   "odds_ratio": 1.22,
+   "ci": [
+    1.0,
+    1.51
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kab. Cirebon",
+   "n": 7838,
+   "observed_pct": 7.11,
+   "odds_ratio": 1.18,
+   "ci": [
+    1.06,
+    1.31
+   ],
+   "significance": "high"
+  },
+  {
+   "area": "Kab. Tasikmalaya",
+   "n": 4483,
+   "observed_pct": 9.59,
+   "odds_ratio": 1.12,
+   "ci": [
+    0.99,
+    1.27
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kota Bekasi",
+   "n": 8601,
+   "observed_pct": 8.87,
+   "odds_ratio": 1.09,
+   "ci": [
+    0.99,
+    1.2
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kab. Bogor",
+   "n": 23657,
+   "observed_pct": 7.41,
+   "odds_ratio": 1.0,
+   "ci": [
+    1.0,
+    1.0
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kab. Sukabumi",
+   "n": 10208,
+   "observed_pct": 7.25,
+   "odds_ratio": 0.96,
+   "ci": [
+    0.87,
+    1.05
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kota Cimahi",
+   "n": 2254,
+   "observed_pct": 5.9,
+   "odds_ratio": 0.91,
+   "ci": [
+    0.75,
+    1.1
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kab. Subang",
+   "n": 5537,
+   "observed_pct": 7.96,
+   "odds_ratio": 0.89,
+   "ci": [
+    0.79,
+    1.0
+   ],
+   "significance": "ns"
+  },
+  {
+   "area": "Kab. Bandung",
+   "n": 12192,
+   "observed_pct": 7.11,
+   "odds_ratio": 0.72,
+   "ci": [
+    0.66,
+    0.79
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kota Depok",
+   "n": 5700,
+   "observed_pct": 7.56,
+   "odds_ratio": 0.7,
+   "ci": [
+    0.62,
+    0.79
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kab. Ciamis",
+   "n": 3098,
+   "observed_pct": 7.23,
+   "odds_ratio": 0.69,
+   "ci": [
+    0.59,
+    0.81
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kota Bandung",
+   "n": 10359,
+   "observed_pct": 5.68,
+   "odds_ratio": 0.66,
+   "ci": [
+    0.59,
+    0.73
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kab. Pangandaran",
+   "n": 790,
+   "observed_pct": 3.29,
+   "odds_ratio": 0.47,
+   "ci": [
+    0.31,
+    0.7
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kab. Garut",
+   "n": 7301,
+   "observed_pct": 6.0,
+   "odds_ratio": 0.42,
+   "ci": [
+    0.37,
+    0.47
+   ],
+   "significance": "low"
+  },
+  {
+   "area": "Kota Banjar",
+   "n": 709,
+   "observed_pct": 3.95,
+   "odds_ratio": 0.37,
+   "ci": [
+    0.25,
+    0.55
+   ],
+   "significance": "low"
+  }
+ ],
+ "model_comparison": [
+  {
+   "model": "Logistic Regression",
+   "variant": "unweighted",
+   "auc": 0.8382,
+   "prauc": 0.3556,
+   "brier": 0.0682,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 0.823,
+   "bss": 0.177,
+   "calib_slope": 0.989,
+   "calib_slope_ci": [
+    0.963,
+    1.014
+   ],
+   "calib_intercept": -0.0,
+   "calib_intercept_ci": [
+    -0.031,
+    0.03
+   ],
+   "mean_pred": 0.0913,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Logistic Regression",
+   "variant": "balanced",
+   "auc": 0.8381,
+   "prauc": 0.3286,
+   "brier": 0.165,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 1.99,
+   "bss": -0.99,
+   "calib_slope": 0.964,
+   "calib_slope_ci": [
+    0.939,
+    0.988
+   ],
+   "calib_intercept": -2.295,
+   "calib_intercept_ci": [
+    -2.326,
+    -2.264
+   ],
+   "mean_pred": 0.3514,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Decision Tree",
+   "variant": "unweighted",
+   "auc": 0.8464,
+   "prauc": 0.329,
+   "brier": 0.0686,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 0.827,
+   "bss": 0.173,
+   "calib_slope": 0.953,
+   "calib_slope_ci": [
+    0.927,
+    0.978
+   ],
+   "calib_intercept": 0.003,
+   "calib_intercept_ci": [
+    -0.028,
+    0.034
+   ],
+   "mean_pred": 0.0911,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Decision Tree",
+   "variant": "balanced",
+   "auc": 0.8455,
+   "prauc": 0.313,
+   "brier": 0.1643,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 1.981,
+   "bss": -0.981,
+   "calib_slope": 0.947,
+   "calib_slope_ci": [
+    0.921,
+    0.973
+   ],
+   "calib_intercept": -2.298,
+   "calib_intercept_ci": [
+    -2.329,
+    -2.268
+   ],
+   "mean_pred": 0.3395,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Naive Bayes",
+   "variant": "unweighted",
+   "auc": 0.8186,
+   "prauc": 0.2928,
+   "brier": 0.0922,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 1.112,
+   "bss": -0.112,
+   "calib_slope": 0.467,
+   "calib_slope_ci": [
+    0.455,
+    0.48
+   ],
+   "calib_intercept": -0.907,
+   "calib_intercept_ci": [
+    -0.943,
+    -0.872
+   ],
+   "mean_pred": 0.1443,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Random Forest",
+   "variant": "unweighted",
+   "auc": 0.8644,
+   "prauc": 0.4096,
+   "brier": 0.0679,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 0.819,
+   "bss": 0.181,
+   "calib_slope": 1.621,
+   "calib_slope_ci": [
+    1.582,
+    1.661
+   ],
+   "calib_intercept": 0.004,
+   "calib_intercept_ci": [
+    -0.025,
+    0.033
+   ],
+   "mean_pred": 0.091,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Random Forest",
+   "variant": "balanced",
+   "auc": 0.8638,
+   "prauc": 0.3866,
+   "brier": 0.147,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 1.773,
+   "bss": -0.773,
+   "calib_slope": 1.629,
+   "calib_slope_ci": [
+    1.589,
+    1.668
+   ],
+   "calib_intercept": -1.998,
+   "calib_intercept_ci": [
+    -2.027,
+    -1.969
+   ],
+   "mean_pred": 0.3587,
+   "obs_rate": 0.0913
+  },
+  {
+   "model": "Gradient Boosting",
+   "variant": "unweighted",
+   "auc": 0.8602,
+   "prauc": 0.3778,
+   "brier": 0.067,
+   "baseline_brier": 0.0829,
+   "brier_ratio": 0.808,
+   "bss": 0.192,
+   "calib_slope": 1.142,
+   "calib_slope_ci": [
+    1.114,
+    1.17
+   ],
+   "calib_intercept": 0.003,
+   "calib_intercept_ci": [
+    -0.027,
+    0.033
+   ],
+   "mean_pred": 0.091,
+   "obs_rate": 0.0913
+  }
+ ],
+ "baseline_brier": 0.08294,
+ "calibration_curves": {
+  "Logistic Regression|unweighted": {
+   "mean_pred": [
+    0.0041,
+    0.0098,
+    0.0157,
+    0.0209,
+    0.028,
+    0.0389,
+    0.0644,
+    0.1238,
+    0.2247,
+    0.3827
+   ],
+   "obs_frac": [
+    0.0107,
+    0.0188,
+    0.0168,
+    0.0178,
+    0.0213,
+    0.0295,
+    0.0618,
+    0.1143,
+    0.2287,
+    0.3928
+   ]
+  },
+  "Decision Tree|unweighted": {
+   "mean_pred": [
+    0.0019,
+    0.0026,
+    0.0065,
+    0.026,
+    0.0321,
+    0.0349,
+    0.0489,
+    0.1097,
+    0.2193,
+    0.3676
+   ],
+   "obs_frac": [
+    0.0027,
+    0.005,
+    0.0059,
+    0.0247,
+    0.0353,
+    0.0346,
+    0.0498,
+    0.1223,
+    0.2184,
+    0.3579
+   ]
+  },
+  "Naive Bayes|unweighted": {
+   "mean_pred": [
+    0.0003,
+    0.0014,
+    0.0031,
+    0.0049,
+    0.009,
+    0.019,
+    0.0506,
+    0.1805,
+    0.433,
+    0.7411
+   ],
+   "obs_frac": [
+    0.013,
+    0.0227,
+    0.0169,
+    0.024,
+    0.0228,
+    0.0333,
+    0.0485,
+    0.1411,
+    0.2628,
+    0.3274
+   ]
+  },
+  "Random Forest|unweighted": {
+   "mean_pred": [
+    0.018,
+    0.0266,
+    0.0317,
+    0.0383,
+    0.0467,
+    0.055,
+    0.072,
+    0.1313,
+    0.2032,
+    0.2867
+   ],
+   "obs_frac": [
+    0.0037,
+    0.0053,
+    0.011,
+    0.0202,
+    0.0205,
+    0.0335,
+    0.0578,
+    0.1185,
+    0.2102,
+    0.4319
+   ]
+  },
+  "Gradient Boosting|unweighted": {
+   "mean_pred": [
+    0.0108,
+    0.0125,
+    0.0144,
+    0.0245,
+    0.0297,
+    0.0388,
+    0.0588,
+    0.1247,
+    0.2343,
+    0.3617
+   ],
+   "obs_frac": [
+    0.0026,
+    0.0047,
+    0.0058,
+    0.0194,
+    0.0278,
+    0.0429,
+    0.0624,
+    0.1113,
+    0.2242,
+    0.4113
+   ]
+  },
+  "Logistic Regression|balanced": {
+   "mean_pred": [
+    0.04,
+    0.089,
+    0.1292,
+    0.1668,
+    0.2126,
+    0.2897,
+    0.4137,
+    0.5862,
+    0.7339,
+    0.8528
+   ],
+   "obs_frac": [
+    0.0067,
+    0.0162,
+    0.0138,
+    0.0158,
+    0.0208,
+    0.0393,
+    0.0635,
+    0.129,
+    0.246,
+    0.3615
+   ]
+  },
+  "Decision Tree|balanced": {
+   "mean_pred": [
+    0.0053,
+    0.0224,
+    0.0584,
+    0.1556,
+    0.2419,
+    0.2798,
+    0.3358,
+    0.5637,
+    0.754,
+    0.848
+   ],
+   "obs_frac": [
+    0.0024,
+    0.0042,
+    0.0059,
+    0.0211,
+    0.0318,
+    0.0429,
+    0.0461,
+    0.1221,
+    0.2391,
+    0.3547
+   ]
+  },
+  "Random Forest|balanced": {
+   "mean_pred": [
+    0.118,
+    0.1742,
+    0.198,
+    0.2393,
+    0.2724,
+    0.3121,
+    0.3665,
+    0.5099,
+    0.6538,
+    0.7427
+   ],
+   "obs_frac": [
+    0.004,
+    0.0038,
+    0.01,
+    0.016,
+    0.0228,
+    0.0363,
+    0.0605,
+    0.1237,
+    0.2122,
+    0.4233
+   ]
+  }
+ },
+ "feature_selection": {
+  "scenarios": {
+   "Full": {
+    "median_auc": 0.835,
+    "min_auc": 0.689,
+    "max_auc": 0.925,
+    "mean_absgap": 2.66,
+    "n_poor": 2,
+    "nfeat": 10
+   },
+   "Statistical (MI)": {
+    "median_auc": 0.842,
+    "min_auc": 0.675,
+    "max_auc": 0.93,
+    "mean_absgap": 2.69,
+    "n_poor": 2,
+    "nfeat": 5
+   },
+   "Clinical": {
+    "median_auc": 0.837,
+    "min_auc": 0.725,
+    "max_auc": 0.932,
+    "mean_absgap": 2.62,
+    "n_poor": 2,
+    "nfeat": 6
+   }
+  },
+  "features_per_scenario": {
+   "Full": [
+    "age",
+    "sex",
+    "hiv",
+    "dm",
+    "hist",
+    "anat",
+    "fac",
+    "own",
+    "entry",
+    "dx"
+   ],
+   "Statistical (MI)": [
+    "hiv",
+    "age",
+    "dx",
+    "fac",
+    "hist"
+   ],
+   "Clinical": [
+    "age",
+    "sex",
+    "hiv",
+    "dm",
+    "hist",
+    "anat"
+   ]
+  },
+  "leakage_check": {
+   "n": 174140,
+   "k_selected": 6,
+   "mi_full_data": {
+    "ageb": 0.00669,
+    "sex": 0.00029,
+    "hiv": 0.04501,
+    "dm": 0.00138,
+    "hist": 0.00187,
+    "anat": 0.00144,
+    "fac": 0.00369,
+    "own": 0.00178,
+    "entry": 0.0001,
+    "dx": 0.00386,
+    "kab": 0.00695
+   },
+   "features_leaky": [
+    "hiv",
+    "kab",
+    "ageb",
+    "dx",
+    "fac",
+    "hist"
+   ],
+   "features_per_fold": [
+    [
+     "hiv",
+     "kab",
+     "ageb",
+     "dx",
+     "fac",
+     "hist"
+    ],
+    [
+     "hiv",
+     "kab",
+     "ageb",
+     "dx",
+     "fac",
+     "hist"
+    ],
+    [
+     "hiv",
+     "kab",
+     "ageb",
+     "dx",
+     "fac",
+     "hist"
+    ]
+   ],
+   "auc_leaky": 0.8366,
+   "auc_proper": 0.8366,
+   "auc_difference": 0.0,
+   "selection_stable_across_folds": true,
+   "selection_same_as_full_data": true
+  }
+ },
+ "local_recalibration": {
+  "summary": {
+   "n_areas_evaluated": 27,
+   "min_events": 20,
+   "mean_absgap_before": 2.647,
+   "mean_absgap_intercept": 0.004,
+   "mean_absgap_intercept_slope": 0.011,
+   "mean_brier_before": 0.06726,
+   "mean_brier_intercept": 0.06512,
+   "mean_brier_intercept_slope": 0.06493,
+   "n_within2pp_before": 13,
+   "n_within2pp_intercept": 27,
+   "n_within2pp_intercept_slope": 27,
+   "auc_unchanged": false
+  },
+  "per_district": [
+   {
+    "kab": "Kab. Bogor",
+    "n": 23647,
+    "events": 1753,
+    "auc": 0.804,
+    "before": {
+     "gap": -1.85,
+     "brier": 0.06227,
+     "intercept": -0.284,
+     "slope": 0.913
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.06124,
+     "intercept": -0.0,
+     "slope": 0.913,
+     "auc": 0.804
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.06113,
+     "intercept": -0.0,
+     "slope": 0.995,
+     "auc": 0.803
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Bandung",
+    "n": 12187,
+    "events": 867,
+    "auc": 0.773,
+    "before": {
+     "gap": -3.31,
+     "brier": 0.06313,
+     "intercept": -0.473,
+     "slope": 0.844
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.0606,
+     "intercept": -0.0,
+     "slope": 0.844,
+     "auc": 0.773
+    },
+    "intercept_slope": {
+     "gap": 0.0,
+     "brier": 0.06066,
+     "intercept": 0.0,
+     "slope": 1.0,
+     "auc": 0.773
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Sukabumi",
+    "n": 10202,
+    "events": 740,
+    "auc": 0.853,
+    "before": {
+     "gap": -1.41,
+     "brier": 0.05777,
+     "intercept": -0.226,
+     "slope": 1.051
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.05743,
+     "intercept": -0.001,
+     "slope": 1.05,
+     "auc": 0.853
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.05745,
+     "intercept": 0.001,
+     "slope": 0.993,
+     "auc": 0.852
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Bekasi",
+    "n": 8597,
+    "events": 763,
+    "auc": 0.824,
+    "before": {
+     "gap": 0.09,
+     "brier": 0.06778,
+     "intercept": 0.013,
+     "slope": 1.015
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.06777,
+     "intercept": -0.0,
+     "slope": 1.015,
+     "auc": 0.824
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.06775,
+     "intercept": -0.0,
+     "slope": 0.999,
+     "auc": 0.824
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Garut",
+    "n": 7300,
+    "events": 438,
+    "auc": 0.727,
+    "before": {
+     "gap": -7.84,
+     "brier": 0.06824,
+     "intercept": -1.034,
+     "slope": 0.671
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.05489,
+     "intercept": -0.001,
+     "slope": 0.67,
+     "auc": 0.727
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.05439,
+     "intercept": 0.002,
+     "slope": 0.977,
+     "auc": 0.726
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Bandung",
+    "n": 10356,
+    "events": 588,
+    "auc": 0.834,
+    "before": {
+     "gap": -2.32,
+     "brier": 0.04916,
+     "intercept": -0.417,
+     "slope": 1.022
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.04803,
+     "intercept": -0.0,
+     "slope": 1.022,
+     "auc": 0.834
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.04806,
+     "intercept": -0.0,
+     "slope": 0.997,
+     "auc": 0.834
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Tasikmalaya",
+    "n": 4482,
+    "events": 430,
+    "auc": 0.85,
+    "before": {
+     "gap": 0.01,
+     "brier": 0.06915,
+     "intercept": 0.001,
+     "slope": 1.087
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.06917,
+     "intercept": -0.001,
+     "slope": 1.085,
+     "auc": 0.85
+    },
+    "intercept_slope": {
+     "gap": -0.01,
+     "brier": 0.06918,
+     "intercept": -0.001,
+     "slope": 0.998,
+     "auc": 0.85
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Bandung Barat",
+    "n": 5269,
+    "events": 385,
+    "auc": 0.91,
+    "before": {
+     "gap": 0.86,
+     "brier": 0.05208,
+     "intercept": 0.162,
+     "slope": 1.319
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.05141,
+     "intercept": -0.0,
+     "slope": 1.319,
+     "auc": 0.91
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.05127,
+     "intercept": 0.001,
+     "slope": 0.997,
+     "auc": 0.909
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Cirebon",
+    "n": 7837,
+    "events": 557,
+    "auc": 0.837,
+    "before": {
+     "gap": 0.55,
+     "brier": 0.05432,
+     "intercept": 0.101,
+     "slope": 1.135
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.05408,
+     "intercept": -0.0,
+     "slope": 1.135,
+     "auc": 0.837
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.05396,
+     "intercept": -0.001,
+     "slope": 0.997,
+     "auc": 0.837
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Bekasi",
+    "n": 11859,
+    "events": 1801,
+    "auc": 0.813,
+    "before": {
+     "gap": 4.85,
+     "brier": 0.11042,
+     "intercept": 0.52,
+     "slope": 1.008
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.1061,
+     "intercept": -0.0,
+     "slope": 1.008,
+     "auc": 0.813
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.10613,
+     "intercept": -0.0,
+     "slope": 0.999,
+     "auc": 0.812
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Indramayu",
+    "n": 5056,
+    "events": 802,
+    "auc": 0.795,
+    "before": {
+     "gap": 3.56,
+     "brier": 0.11151,
+     "intercept": 0.363,
+     "slope": 0.837
+    },
+    "intercept_only": {
+     "gap": 0.0,
+     "brier": 0.11036,
+     "intercept": 0.0,
+     "slope": 0.837,
+     "auc": 0.795
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.1107,
+     "intercept": 0.001,
+     "slope": 0.992,
+     "auc": 0.794
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Cianjur",
+    "n": 9106,
+    "events": 1496,
+    "auc": 0.845,
+    "before": {
+     "gap": 6.0,
+     "brier": 0.11382,
+     "intercept": 0.641,
+     "slope": 1.033
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.10713,
+     "intercept": -0.0,
+     "slope": 1.033,
+     "auc": 0.845
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.10718,
+     "intercept": -0.0,
+     "slope": 1.0,
+     "auc": 0.845
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Bogor",
+    "n": 6077,
+    "events": 518,
+    "auc": 0.863,
+    "before": {
+     "gap": 2.69,
+     "brier": 0.06185,
+     "intercept": 0.492,
+     "slope": 1.168
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.05879,
+     "intercept": -0.0,
+     "slope": 1.168,
+     "auc": 0.863
+    },
+    "intercept_slope": {
+     "gap": 0.0,
+     "brier": 0.05844,
+     "intercept": 0.0,
+     "slope": 0.999,
+     "auc": 0.863
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Karawang",
+    "n": 9167,
+    "events": 997,
+    "auc": 0.82,
+    "before": {
+     "gap": 2.66,
+     "brier": 0.08054,
+     "intercept": 0.372,
+     "slope": 0.986
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.07893,
+     "intercept": -0.0,
+     "slope": 0.986,
+     "auc": 0.82
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.07894,
+     "intercept": -0.0,
+     "slope": 1.0,
+     "auc": 0.82
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Depok",
+    "n": 5699,
+    "events": 431,
+    "auc": 0.818,
+    "before": {
+     "gap": -3.59,
+     "brier": 0.06418,
+     "intercept": -0.486,
+     "slope": 1.036
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.06202,
+     "intercept": -0.0,
+     "slope": 1.036,
+     "auc": 0.818
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.06199,
+     "intercept": -0.0,
+     "slope": 0.999,
+     "auc": 0.818
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Subang",
+    "n": 5533,
+    "events": 441,
+    "auc": 0.79,
+    "before": {
+     "gap": -1.18,
+     "brier": 0.06561,
+     "intercept": -0.179,
+     "slope": 0.813
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.06502,
+     "intercept": -0.001,
+     "slope": 0.812,
+     "auc": 0.79
+    },
+    "intercept_slope": {
+     "gap": -0.01,
+     "brier": 0.06499,
+     "intercept": -0.001,
+     "slope": 0.997,
+     "auc": 0.79
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Purwakarta",
+    "n": 3270,
+    "events": 277,
+    "auc": 0.857,
+    "before": {
+     "gap": 0.42,
+     "brier": 0.06301,
+     "intercept": 0.066,
+     "slope": 1.072
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.06288,
+     "intercept": -0.001,
+     "slope": 1.071,
+     "auc": 0.856
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.06287,
+     "intercept": 0.001,
+     "slope": 0.981,
+     "auc": 0.852
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Majalengka",
+    "n": 3669,
+    "events": 223,
+    "auc": 0.924,
+    "before": {
+     "gap": 0.52,
+     "brier": 0.04219,
+     "intercept": 0.11,
+     "slope": 1.582
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.04161,
+     "intercept": -0.0,
+     "slope": 1.581,
+     "auc": 0.924
+    },
+    "intercept_slope": {
+     "gap": -0.02,
+     "brier": 0.04009,
+     "intercept": -0.006,
+     "slope": 0.99,
+     "auc": 0.924
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Sumedang",
+    "n": 3512,
+    "events": 487,
+    "auc": 0.692,
+    "before": {
+     "gap": 7.24,
+     "brier": 0.11068,
+     "intercept": 1.029,
+     "slope": 0.591
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.10833,
+     "intercept": -0.001,
+     "slope": 0.59,
+     "auc": 0.692
+    },
+    "intercept_slope": {
+     "gap": -0.02,
+     "brier": 0.10634,
+     "intercept": -0.001,
+     "slope": 0.993,
+     "auc": 0.692
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Ciamis",
+    "n": 3094,
+    "events": 224,
+    "auc": 0.83,
+    "before": {
+     "gap": -3.45,
+     "brier": 0.06264,
+     "intercept": -0.493,
+     "slope": 1.085
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.06031,
+     "intercept": -0.0,
+     "slope": 1.085,
+     "auc": 0.83
+    },
+    "intercept_slope": {
+     "gap": 0.0,
+     "brier": 0.06053,
+     "intercept": 0.001,
+     "slope": 0.999,
+     "auc": 0.83
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Pangandaran",
+    "n": 790,
+    "events": 26,
+    "auc": 0.917,
+    "before": {
+     "gap": -3.47,
+     "brier": 0.02867,
+     "intercept": -0.859,
+     "slope": 1.455
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.02706,
+     "intercept": -0.0,
+     "slope": 1.455,
+     "auc": 0.916
+    },
+    "intercept_slope": {
+     "gap": 0.01,
+     "brier": 0.02667,
+     "intercept": 0.005,
+     "slope": 0.988,
+     "auc": 0.914
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kab. Kuningan",
+    "n": 3132,
+    "events": 326,
+    "auc": 0.832,
+    "before": {
+     "gap": 2.78,
+     "brier": 0.07523,
+     "intercept": 0.406,
+     "slope": 1.108
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.07267,
+     "intercept": -0.0,
+     "slope": 1.108,
+     "auc": 0.832
+    },
+    "intercept_slope": {
+     "gap": -0.01,
+     "brier": 0.07237,
+     "intercept": -0.001,
+     "slope": 0.999,
+     "auc": 0.832
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Tasikmalaya",
+    "n": 2613,
+    "events": 195,
+    "auc": 0.891,
+    "before": {
+     "gap": 1.47,
+     "brier": 0.0546,
+     "intercept": 0.268,
+     "slope": 1.477
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.05298,
+     "intercept": -0.001,
+     "slope": 1.473,
+     "auc": 0.891
+    },
+    "intercept_slope": {
+     "gap": -0.01,
+     "brier": 0.05122,
+     "intercept": -0.003,
+     "slope": 0.995,
+     "auc": 0.891
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Cimahi",
+    "n": 2250,
+    "events": 133,
+    "auc": 0.895,
+    "before": {
+     "gap": -0.81,
+     "brier": 0.04331,
+     "intercept": -0.161,
+     "slope": 1.321
+    },
+    "intercept_only": {
+     "gap": -0.0,
+     "brier": 0.04365,
+     "intercept": -0.001,
+     "slope": 1.317,
+     "auc": 0.895
+    },
+    "intercept_slope": {
+     "gap": -0.01,
+     "brier": 0.04298,
+     "intercept": -0.003,
+     "slope": 0.996,
+     "auc": 0.895
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Cirebon",
+    "n": 1543,
+    "events": 155,
+    "auc": 0.793,
+    "before": {
+     "gap": 1.82,
+     "brier": 0.07744,
+     "intercept": 0.259,
+     "slope": 0.91
+    },
+    "intercept_only": {
+     "gap": -0.03,
+     "brier": 0.07711,
+     "intercept": -0.004,
+     "slope": 0.904,
+     "auc": 0.792
+    },
+    "intercept_slope": {
+     "gap": -0.11,
+     "brier": 0.07799,
+     "intercept": -0.014,
+     "slope": 0.937,
+     "auc": 0.789
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Sukabumi",
+    "n": 1425,
+    "events": 123,
+    "auc": 0.868,
+    "before": {
+     "gap": -0.19,
+     "brier": 0.06404,
+     "intercept": -0.029,
+     "slope": 1.127
+    },
+    "intercept_only": {
+     "gap": 0.0,
+     "brier": 0.06407,
+     "intercept": 0.0,
+     "slope": 1.127,
+     "auc": 0.868
+    },
+    "intercept_slope": {
+     "gap": -0.0,
+     "brier": 0.06438,
+     "intercept": -0.0,
+     "slope": 0.984,
+     "auc": 0.865
+    },
+    "evaluated": true
+   },
+   {
+    "kab": "Kota Banjar",
+    "n": 709,
+    "events": 28,
+    "auc": 0.857,
+    "before": {
+     "gap": -6.53,
+     "brier": 0.04242,
+     "intercept": -1.169,
+     "slope": 1.27
+    },
+    "intercept_only": {
+     "gap": -0.01,
+     "brier": 0.03472,
+     "intercept": -0.003,
+     "slope": 1.263,
+     "auc": 0.857
+    },
+    "intercept_slope": {
+     "gap": -0.05,
+     "brier": 0.03536,
+     "intercept": -0.016,
+     "slope": 0.917,
+     "auc": 0.854
+    },
+    "evaluated": true
+   }
+  ]
+ },
+ "scorecard": {
+  "points": [
+   {
+    "feature": "sex",
+    "level": "P",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "sex",
+    "level": "L",
+    "points": 0,
+    "reference": false
+   },
+   {
+    "feature": "hiv",
+    "level": "neg",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "hiv",
+    "level": "pos",
+    "points": 3,
+    "reference": false
+   },
+   {
+    "feature": "hiv",
+    "level": "unrec",
+    "points": 6,
+    "reference": false
+   },
+   {
+    "feature": "dx",
+    "level": "notrec",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "dx",
+    "level": "molecular",
+    "points": 2,
+    "reference": false
+   },
+   {
+    "feature": "fac",
+    "level": "puskesmas",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "fac",
+    "level": "hospital",
+    "points": 0,
+    "reference": false
+   },
+   {
+    "feature": "fac",
+    "level": "clinic",
+    "points": 1,
+    "reference": false
+   },
+   {
+    "feature": "fac",
+    "level": "other",
+    "points": 1,
+    "reference": false
+   },
+   {
+    "feature": "riw",
+    "level": "new",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "riw",
+    "level": "relapse",
+    "points": 1,
+    "reference": false
+   },
+   {
+    "feature": "riw",
+    "level": "failure",
+    "points": 2,
+    "reference": false
+   },
+   {
+    "feature": "riw",
+    "level": "retreat",
+    "points": 1,
+    "reference": false
+   },
+   {
+    "feature": "riw",
+    "level": "unknown",
+    "points": 0,
+    "reference": false
+   },
+   {
+    "feature": "age",
+    "level": "25-44",
+    "points": 0,
+    "reference": true
+   },
+   {
+    "feature": "age",
+    "level": "0-14",
+    "points": -2,
+    "reference": false
+   },
+   {
+    "feature": "age",
+    "level": "15-24",
+    "points": 0,
+    "reference": false
+   },
+   {
+    "feature": "age",
+    "level": "45-64",
+    "points": 0,
+    "reference": false
+   },
+   {
+    "feature": "age",
+    "level": "65+",
+    "points": 1,
+    "reference": false
+   }
+  ],
+  "tier_cutoffs": {
+   "Low": "<=0",
+   "Moderate": "1-3",
+   "High": "4-6",
+   "Very high": ">=7"
+  },
+  "scale_logodds_per_point": 0.45,
+  "tiers_apparent": {
+   "Low": {
+    "n": 11126,
+    "ltfu": 1.55
+   },
+   "Moderate": {
+    "n": 23340,
+    "ltfu": 2.29
+   },
+   "High": {
+    "n": 13828,
+    "ltfu": 8.86
+   },
+   "Very high": {
+    "n": 11706,
+    "ltfu": 30.27
+   }
+  },
+  "tiers_out_of_fold": {
+   "Low": {
+    "n": 10895,
+    "ltfu": 1.57
+   },
+   "Moderate": {
+    "n": 23442,
+    "ltfu": 2.27
+   },
+   "High": {
+    "n": 13635,
+    "ltfu": 8.67
+   },
+   "Very high": {
+    "n": 12028,
+    "ltfu": 29.85
+   }
+  },
+  "tiers_lodo": {
+   "Low": {
+    "n": 10981,
+    "ltfu": 1.89
+   },
+   "Moderate": {
+    "n": 23011,
+    "ltfu": 2.15
+   },
+   "High": {
+    "n": 13578,
+    "ltfu": 8.99
+   },
+   "Very high": {
+    "n": 11614,
+    "ltfu": 29.69
+   }
+  },
+  "score_validation": {
+   "n": 60000,
+   "prevalence": 0.09127,
+   "baseline_brier": 0.08294,
+   "scale_logodds_per_point": 0.45,
+   "score_out_of_fold": {
+    "auc": 0.8168,
+    "brier": 0.07082,
+    "bss": 0.146,
+    "intercept": -0.001,
+    "slope": 0.996
+   },
+   "score_lodo": {
+    "auc": 0.8135,
+    "brier": 0.07131,
+    "bss": 0.14,
+    "intercept": -0.005,
+    "slope": 0.966,
+    "coverage": 59184
+   },
+   "gb_full_model_auc": 0.8602
+  },
+  "operating_points": [
+   {
+    "label": "Top 5%",
+    "t": 0.349,
+    "flag": 5.0,
+    "sens": 0.26,
+    "spec": 0.97,
+    "ppv": 47.0,
+    "npv": 92.9,
+    "nne": 2.1
+   },
+   {
+    "label": "Top 10%",
+    "t": 0.292,
+    "flag": 10.0,
+    "sens": 0.45,
+    "spec": 0.94,
+    "ppv": 41.1,
+    "npv": 94.4,
+    "nne": 2.4
+   },
+   {
+    "label": "Top 20%",
+    "t": 0.176,
+    "flag": 20.0,
+    "sens": 0.7,
+    "spec": 0.85,
+    "ppv": 31.8,
+    "npv": 96.5,
+    "nne": 3.1
+   },
+   {
+    "label": "Youden",
+    "t": 0.102,
+    "flag": 27.1,
+    "sens": 0.8,
+    "spec": 0.78,
+    "ppv": 26.8,
+    "npv": 97.5,
+    "nne": 3.7
+   }
+  ],
+  "youden_nested": {
+   "flagged": 27.4,
+   "sens": 0.798,
+   "spec": 0.779,
+   "ppv": 26.6,
+   "npv": 97.5,
+   "nne": 3.8,
+   "thresholds_per_fold": [
+    0.0976,
+    0.0984,
+    0.1021
+   ]
+  }
+ },
+ "learning_curve": {
+  "test_size": 52260,
+  "curves": {
+   "Logistic Regression": [
+    {
+     "size": 500,
+     "auc": 0.8072,
+     "sd": 0.0068
+    },
+    {
+     "size": 1000,
+     "auc": 0.8163,
+     "sd": 0.0052
+    },
+    {
+     "size": 2000,
+     "auc": 0.825,
+     "sd": 0.0008
+    },
+    {
+     "size": 5000,
+     "auc": 0.8348,
+     "sd": 0.0013
+    },
+    {
+     "size": 10000,
+     "auc": 0.8372,
+     "sd": 0.0007
+    },
+    {
+     "size": 20000,
+     "auc": 0.8388,
+     "sd": 0.0005
+    },
+    {
+     "size": 40000,
+     "auc": 0.84,
+     "sd": 0.0002
+    },
+    {
+     "size": 80000,
+     "auc": 0.8411,
+     "sd": 0.0002
+    },
+    {
+     "size": 121941,
+     "auc": 0.8412,
+     "sd": 0.0001
+    }
+   ],
+   "Gradient Boosting": [
+    {
+     "size": 500,
+     "auc": 0.8085,
+     "sd": 0.0005
+    },
+    {
+     "size": 1000,
+     "auc": 0.8258,
+     "sd": 0.0005
+    },
+    {
+     "size": 2000,
+     "auc": 0.8409,
+     "sd": 0.0011
+    },
+    {
+     "size": 5000,
+     "auc": 0.8531,
+     "sd": 0.0029
+    },
+    {
+     "size": 10000,
+     "auc": 0.8573,
+     "sd": 0.0016
+    },
+    {
+     "size": 20000,
+     "auc": 0.8604,
+     "sd": 0.0005
+    },
+    {
+     "size": 40000,
+     "auc": 0.8617,
+     "sd": 0.0008
+    },
+    {
+     "size": 80000,
+     "auc": 0.8647,
+     "sd": 0.0002
+    },
+    {
+     "size": 121941,
+     "auc": 0.8643,
+     "sd": 0.0004
+    }
+   ]
+  }
+ },
+ "dedup_sensitivity": {
+  "tb06": {
+   "table": "tb06",
+   "n_population": 174201,
+   "ltfu_population": 15898,
+   "ltfu_pct_population": 9.13,
+   "n_model": 60000,
+   "prevalence_model": 0.09127,
+   "baseline_brier": 0.08294,
+   "models": {
+    "Gradient Boosting": {
+     "auc": 0.8602,
+     "prauc": 0.3778,
+     "brier": 0.067,
+     "bss": 0.192
+    },
+    "Logistic Regression": {
+     "auc": 0.8381,
+     "prauc": 0.3286,
+     "brier": 0.165,
+     "bss": -0.99
+    }
+   }
+  },
+  "tb06_clean": {
+   "table": "tb06_clean",
+   "n_population": 165939,
+   "ltfu_population": 12813,
+   "ltfu_pct_population": 7.72,
+   "n_model": 60000,
+   "prevalence_model": 0.07722,
+   "baseline_brier": 0.07125,
+   "models": {
+    "Gradient Boosting": {
+     "auc": 0.8598,
+     "prauc": 0.3384,
+     "brier": 0.059,
+     "bss": 0.172
+    },
+    "Logistic Regression": {
+     "auc": 0.841,
+     "prauc": 0.2955,
+     "brier": 0.1634,
+     "bss": -1.293
+    }
+   }
+  }
+ },
+ "reproducibility": {
+  "python": "3.7.4",
+  "libraries": {
+   "scikit-learn": "0.23.2",
+   "statsmodels": "0.13.5",
+   "numpy": "1.21.6",
+   "scipy": "1.5.2",
+   "pandas": "1.3.5"
+  },
+  "seed": 0,
+  "cross_validation": "Stratified 3-fold for Table 3 and calibration metrics; separate stratified 5-fold for the fold-spread figure",
+  "subsamples": {
+   "model_comparison": 60000,
+   "decile_and_calibration_figures": 80000,
+   "leave_one_district_out": "full eligible cohort, no subsampling"
+  },
+  "bootstrap_resamples": 1000,
+  "permutations": 9999,
+  "spatial_statistics": "Moran I, LISA, Getis-Ord and the Kulldorff scan were implemented manually in NumPy; no geospatial library was used."
+ }
+}

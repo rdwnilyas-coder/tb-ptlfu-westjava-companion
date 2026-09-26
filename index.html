@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Companion data — Spatial transferability of explainable ML for pre-treatment TB loss to follow-up</title>
+<meta name="description" content="Aggregate results, tables and figures accompanying the BMC Medical Informatics and Decision Making article on spatial transferability of explainable machine learning for pre-treatment tuberculosis loss to follow-up in West Java, Indonesia.">
+<style>
+:root{
+  --ink:#1b232b; --ink-2:#4a5761; --ink-3:#77838d;
+  --surface:#ffffff; --surface-2:#f6f8f9; --surface-3:#eef2f4;
+  --line:#dde4e8; --line-2:#c7d2d8;
+  --accent:#0d6e6e; --accent-soft:#e7f2f1;
+  --warm:#b34a12; --warm-soft:#fbeee6;
+  --max:1080px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#e9eef1; --ink-2:#aab6be; --ink-3:#7e8a93;
+    --surface:#10161b; --surface-2:#161e25; --surface-3:#1d262e;
+    --line:#2a353e; --line-2:#3a4650;
+    --accent:#5fc0b6; --accent-soft:#16302f;
+    --warm:#e8916a; --warm-soft:#2e1e17;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e9eef1; --ink-2:#aab6be; --ink-3:#7e8a93;
+  --surface:#10161b; --surface-2:#161e25; --surface-3:#1d262e;
+  --line:#2a353e; --line-2:#3a4650;
+  --accent:#5fc0b6; --accent-soft:#16302f;
+  --warm:#e8916a; --warm-soft:#2e1e17;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:20px}
+header{border-bottom:1px solid var(--line);background:var(--surface-2)}
+header .wrap{padding-block:34px 28px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:650;margin:0 0 10px}
+h1{font-size:clamp(21px,3.4vw,30px);line-height:1.25;margin:0 0 12px;font-weight:680;letter-spacing:-.01em}
+.sub{color:var(--ink-2);margin:0;max-width:62ch}
+.sub a{color:var(--accent)}
+.notice{margin-top:20px;padding:13px 16px;border-left:3px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 7px 7px 0;font-size:14px;color:var(--ink)}
+nav{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:thin}
+nav a{flex:0 0 auto;font-size:13px;color:var(--ink-2);text-decoration:none;padding:6px 11px;
+  border-radius:999px;white-space:nowrap;border:1px solid transparent}
+nav a:hover{color:var(--ink);background:var(--surface-3);border-color:var(--line)}
+main .wrap{padding-block:12px 60px}
+section{padding-block:34px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:19px;margin:0 0 6px;font-weight:660;letter-spacing:-.005em;scroll-margin-top:64px}
+h3{font-size:15px;margin:26px 0 8px;font-weight:640;color:var(--ink)}
+.lede{color:var(--ink-2);margin:0 0 18px;max-width:72ch}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:20px 0 4px}
+.tile{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .v{font-size:23px;font-weight:660;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile .k{font-size:12.5px;color:var(--ink-3);margin-top:3px;line-height:1.35}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;
+  border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+caption{text-align:left;font-size:13px;color:var(--ink-3);padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+th,td{padding:8px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+thead th{background:var(--surface-3);color:var(--ink-2);font-weight:620;font-size:12.5px;
+  position:sticky;top:0;border-bottom:1px solid var(--line-2)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+td.grp{font-weight:620;background:var(--surface-2)}
+.hi{color:var(--warm);font-weight:620}
+.ok{color:var(--accent);font-weight:620}
+.mut{color:var(--ink-3)}
+.figs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:16px}
+figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface-2)}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figcaption{padding:10px 13px;font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line)}
+.dl{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.dl a{font-size:13.5px;color:var(--accent);text-decoration:none;border:1px solid var(--line-2);
+  padding:8px 13px;border-radius:8px;background:var(--surface-2)}
+.dl a:hover{border-color:var(--accent)}
+footer{border-top:1px solid var(--line);background:var(--surface-2);color:var(--ink-3);font-size:13px}
+footer .wrap{padding-block:26px 34px}
+code{background:var(--surface-3);padding:1px 5px;border-radius:4px;font-size:12.5px;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+@media (max-width:520px){ th,td{padding:7px 9px;font-size:12.5px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Companion data</p>
+    <h1>Spatial transferability of explainable machine learning for predicting pre-treatment tuberculosis loss to follow-up across districts and cities in West Java, Indonesia</h1>
+    <p class="sub" id="sub"></p>
+    <div class="notice" id="privacy"></div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#predictors">Predictor values</a>
+  <a href="#districts">By district</a>
+  <a href="#models">Model comparison</a>
+  <a href="#recal">Local recalibration</a>
+  <a href="#scorecard">Risk scorecard</a>
+  <a href="#spatial">Spatial statistics</a>
+  <a href="#features">Feature selection</a>
+  <a href="#curve">Learning curve</a>
+  <a href="#figures">Figures</a>
+  <a href="#repro">Reproducibility</a>
+</div></nav>
+
+<main><div class="wrap">
+
+  <section id="key">
+    <h2>At a glance</h2>
+    <p class="lede">Headline quantities from the study cohort and the transportable model.</p>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section id="predictors">
+    <h2>Predictor value details</h2>
+    <p class="lede">The article reports predictor importance but leaves the value-level detail to this page.
+      For each predictor, the table gives the number of patients, the observed pre-treatment loss rate,
+      and the odds ratio adjusted for the other predictors, with a 95&nbsp;% confidence interval.</p>
+    <div id="predTables"></div>
+  </section>
+
+  <section id="districts">
+    <h2>Transferability by district and city</h2>
+    <p class="lede">Leave-one-district-out results for the transportable model: trained on 26 areas,
+      tested on the one held out. The calibration gap is the observed rate minus the predicted rate,
+      so a positive value means the provincial model under-estimates risk in that area.</p>
+    <div class="scroll"><table id="tDistrict"></table></div>
+  </section>
+
+  <section id="or">
+    <h2>Adjusted odds ratios by area</h2>
+    <p class="lede">From the development model, which includes district of residence. Reference category is
+      Kabupaten Bogor. These estimate area-level risk after patient case mix has been equalised.</p>
+    <div class="scroll"><table id="tOR"></table></div>
+  </section>
+
+  <section id="models">
+    <h2>Model comparison and calibration</h2>
+    <p class="lede">Five explainable algorithms, each fitted with and without balanced class weights where
+      the option exists. The Brier skill score is measured against a constant prediction at the observed
+      prevalence; a positive value beats that baseline.</p>
+    <div class="scroll"><table id="tModels"></table></div>
+  </section>
+
+  <section id="recal">
+    <h2>Effect of local recalibration</h2>
+    <p class="lede">Within each held-out area a correction was estimated on one half of that area's patients
+      and applied to the other half, and vice versa, so no recalibrated prediction was evaluated on the data
+      that produced its own correction.</p>
+    <div class="scroll"><table id="tRecalSummary"></table></div>
+    <div class="scroll"><table id="tRecal"></table></div>
+  </section>
+
+  <section id="scorecard">
+    <h2>Integer risk scorecard</h2>
+    <p class="lede">Points are the multivariable logistic coefficients divided by a fixed scaling constant and
+      rounded to the nearest integer. Every level is listed, including those worth zero points.</p>
+    <div class="scroll"><table id="tPoints"></table></div>
+    <h3>Observed loss rate by risk tier</h3>
+    <div class="scroll"><table id="tTiers"></table></div>
+    <h3>Clinical operating characteristics</h3>
+    <div class="scroll"><table id="tOps"></table></div>
+  </section>
+
+  <section id="spatial">
+    <h2>Spatial statistics</h2>
+    <p class="lede">Global Moran index and local indicators computed on the per-area calibration gap under
+      three neighbourhood definitions, with significance from 9,999 permutations.</p>
+    <div class="scroll"><table id="tMoran"></table></div>
+    <div id="lisaNote" class="lede" style="margin-top:14px"></div>
+  </section>
+
+  <section id="features">
+    <h2>Feature selection</h2>
+    <p class="lede">Three strategies compared under the same leave-one-district-out pipeline, plus the check
+      that mutual-information selection carried out within each training fold gives the same result as
+      selection on the whole dataset.</p>
+    <div class="scroll"><table id="tScen"></table></div>
+    <div id="leakNote" class="lede" style="margin-top:14px"></div>
+  </section>
+
+  <section id="curve">
+    <h2>Learning curve</h2>
+    <p class="lede">ROC AUC on a fixed held-out test set against increasing training set size, for the linear
+      model and for the best-performing ensemble.</p>
+    <div class="scroll"><table id="tCurve"></table></div>
+  </section>
+
+  <section id="figures">
+    <h2>Figures</h2>
+    <p class="lede">Every figure in the article, at the resolution submitted.</p>
+    <div class="figs" id="figs"></div>
+  </section>
+
+  <section id="repro">
+    <h2>Reproducibility</h2>
+    <p class="lede">The full specification needed to reimplement the analysis.</p>
+    <div class="scroll"><table id="tRepro"></table></div>
+    <h3>Download</h3>
+    <p class="lede">All numbers on this page come from a single machine-readable file.</p>
+    <div class="dl">
+      <a href="data/companion.json" download>companion.json — all aggregate results</a>
+    </div>
+  </section>
+
+</div></main>
+
+<footer><div class="wrap">
+  <p id="foot"></p>
+</div></footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const n0 = v => v==null ? '—' : Number(v).toLocaleString('en-US');
+const n2 = (v,d=2) => v==null ? '—' : Number(v).toFixed(d);
+const pct = (v,d=1) => v==null ? '—' : Number(v).toFixed(d)+'%';
+
+function table(el, cols, rows, caption){
+  const t = typeof el === 'string' ? $(el) : el;
+  const head = '<thead><tr>' + cols.map(c=>`<th>${c}</th>`).join('') + '</tr></thead>';
+  const body = '<tbody>' + rows.map(r=>'<tr>'+r.map(c=>`<td>${c==null?'—':c}</td>`).join('')+'</tr>').join('') + '</tbody>';
+  t.innerHTML = (caption?`<caption>${caption}</caption>`:'') + head + body;
+}
+
+fetch('data/companion.json').then(r=>r.json()).then(D=>{
+  const m = D.meta;
+
+  $('#sub').innerHTML = `Aggregate results accompanying the article in <em>${m.journal}</em>. `+
+    `Cohort: ${n0(m.n_diagnosed)} tuberculosis cases diagnosed in ${m.setting} and registered `+
+    `${m.registration_window}, with a register cut-off of ${m.data_cutoff}, giving `+
+    `${m.followup_days_min} to ${m.followup_days_max} days of follow-up per patient.`;
+  $('#privacy').textContent = m.privacy;
+
+  $('#tiles').innerHTML = [
+    [n0(m.n_diagnosed), 'Diagnosed cases'],
+    [pct(m.ltfu_pct,2), 'Pre-treatment loss to follow-up'],
+    [m.n_areas, 'Districts and cities'],
+    [n2(D.model_comparison.find(r=>r.model==='Random Forest'&&r.variant==='unweighted').auc,3), 'Best pooled ROC AUC'],
+    [n2(D.transferability_summary.median_auc,3), 'Median AUC across areas'],
+    [n2(D.transferability_summary.min_auc,2)+'–'+n2(D.transferability_summary.max_auc,2), 'Range across areas']
+  ].map(([v,k])=>`<div class="tile"><div class="v">${v}</div><div class="k">${k}</div></div>`).join('');
+
+  // ---- predictor value details ----
+  $('#predTables').innerHTML = D.predictor_values.features.map((f,i)=>
+    `<h3>${f.feature}</h3><div class="scroll"><table id="pv${i}"></table></div>`).join('');
+  D.predictor_values.features.forEach((f,i)=>{
+    table('#pv'+i, ['Category','Patients','Loss rate','Adjusted OR','95% CI'],
+      f.values.map(v=>[
+        v.ref ? `${v.val} <span class="mut">(reference)</span>` : v.val,
+        n0(v.n), pct(v.ltfu,2),
+        v.ref ? '<span class="mut">1.00</span>' : (v.or_>1?`<span class="hi">${n2(v.or_)}</span>`:`<span class="ok">${n2(v.or_)}</span>`),
+        v.ref ? '—' : `${n2(v.lo)} to ${n2(v.hi)}`
+      ]), `Reference category: ${f.ref}. Model fitted on ${n0(D.predictor_values.n)} cases; McFadden R² ${n2(D.predictor_values.pseudo_r2,3)}.`);
+  });
+
+  // ---- per district ----
+  const dd = [...D.per_district].sort((a,b)=>a.auc-b.auc);
+  table('#tDistrict',
+    ['District or city','Cases','Events','Observed','Predicted','Gap (pp)','AUC','95% CI','HIV not recorded'],
+    dd.map(r=>[r.area, n0(r.n), n0(r.events), pct(r.observed_pct,2), pct(r.predicted_pct,2),
+      (r.gap_pp>0?`<span class="hi">+${n2(r.gap_pp)}</span>`:n2(r.gap_pp)),
+      (r.auc<0.75?`<span class="hi">${n2(r.auc,3)}</span>`:n2(r.auc,3)),
+      r.auc_ci ? `${n2(r.auc_ci[0],3)} to ${n2(r.auc_ci[1],3)}` : '—',
+      pct(r.hiv_not_recorded_pct,1)]),
+    `Transportable model, ${D.transferability_summary.n_predictors} predictors, district identifier excluded. Sorted by AUC. Orange marks AUC below 0.75 and areas whose risk is under-estimated.`);
+
+  // ---- adjusted OR ----
+  table('#tOR', ['Area','Cases','Observed loss','Adjusted OR','95% CI','Direction'],
+    D.adjusted_odds_ratios.map(r=>[r.area, n0(r.n), pct(r.observed_pct,2),
+      (r.odds_ratio>1?`<span class="hi">${n2(r.odds_ratio)}</span>`:`<span class="ok">${n2(r.odds_ratio)}</span>`),
+      `${n2(r.ci[0])} to ${n2(r.ci[1])}`,
+      r.significance==='high'?'higher than reference':(r.significance==='low'?'lower than reference':'not different')]),
+    'Development model. Reference: Kabupaten Bogor.');
+
+  // ---- models ----
+  table('#tModels',
+    ['Algorithm','Class weighting','ROC AUC','PR AUC','Brier','Brier skill score','Calibration slope','Calibration intercept'],
+    D.model_comparison.map(r=>[r.model, r.variant==='unweighted'?'none':'balanced',
+      n2(r.auc,3), n2(r.prauc,3), n2(r.brier,4),
+      (r.bss>0?`<span class="ok">+${n2(r.bss,3)}</span>`:`<span class="hi">${n2(r.bss,3)}</span>`),
+      `${n2(r.calib_slope,3)} <span class="mut">(${n2(r.calib_slope_ci[0],2)}–${n2(r.calib_slope_ci[1],2)})</span>`,
+      `${r.calib_intercept>=0?'+':''}${n2(r.calib_intercept,3)} <span class="mut">(${n2(r.calib_intercept_ci[0],2)}–${n2(r.calib_intercept_ci[1],2)})</span>`]),
+    `Baseline Brier for a constant prediction at the observed prevalence: ${n2(D.baseline_brier,4)}. Three-fold cross-validation on a stratified subsample of 60,000 cases, seed 0.`);
+
+  // ---- recalibration ----
+  const rs = D.local_recalibration.summary;
+  table('#tRecalSummary', ['Measure','Provincial model as is','Intercept only','Intercept and slope'],
+    [['Mean absolute calibration gap (pp)', n2(rs.mean_absgap_before), `<span class="ok">${n2(rs.mean_absgap_intercept)}</span>`, n2(rs.mean_absgap_intercept_slope)],
+     ['Mean Brier score', n2(rs.mean_brier_before,4), `<span class="ok">${n2(rs.mean_brier_intercept,4)}</span>`, n2(rs.mean_brier_intercept_slope,4)],
+     ['Areas within 2 points of calibration', `${rs.n_within2pp_before} of ${rs.n_areas_evaluated}`, `<span class="ok">${rs.n_within2pp_intercept} of ${rs.n_areas_evaluated}</span>`, `${rs.n_within2pp_intercept_slope} of ${rs.n_areas_evaluated}`]],
+    'Evaluated out of fold within each area.');
+  const rr = D.local_recalibration.per_district.filter(r=>r.evaluated).sort((a,b)=>Math.abs(b.before.gap)-Math.abs(a.before.gap));
+  table('#tRecal', ['Area','AUC','Gap before (pp)','Gap after (pp)','Brier before','Brier after'],
+    rr.map(r=>[r.area, n2(r.auc,3),
+      (r.before.gap>0?`<span class="hi">+${n2(r.before.gap)}</span>`:n2(r.before.gap)),
+      `<span class="ok">${n2(r.intercept_only.gap)}</span>`,
+      n2(r.before.brier,4), n2(r.intercept_only.brier,4)]),
+    'Sorted by the size of the original calibration gap. Discrimination is unchanged by recalibration; the largest change in any area AUC is 0.001.');
+
+  // ---- scorecard ----
+  const P = D.scorecard.points;
+  const labels = {sex:'Sex', hiv:'HIV status', dx:'Diagnosis method', fac:'Facility type', riw:'Treatment history', age:'Age band'};
+  let last=null;
+  table('#tPoints', ['Factor','Category','Points'],
+    P.map(p=>{ const show = p.feature!==last; last=p.feature;
+      return [show?`<span class="grp">${labels[p.feature]||p.feature}</span>`:'',
+              p.reference?`${p.level} <span class="mut">(reference)</span>`:p.level,
+              (p.points>0?`<span class="hi">+${p.points}</span>`:(p.points<0?`<span class="ok">${p.points}</span>`:'0'))];}),
+    `Scale: ${D.scorecard.scale_logodds_per_point} log-odds per point. Tiers — low ${D.scorecard.tier_cutoffs.Low}, moderate ${D.scorecard.tier_cutoffs.Moderate}, high ${D.scorecard.tier_cutoffs.High}, very high ${D.scorecard.tier_cutoffs['Very high']}.`);
+
+  const tiers=['Low','Moderate','High','Very high'];
+  table('#tTiers', ['Risk tier','Apparent','Out of fold','Leave-one-district-out'],
+    tiers.map(t=>[t, pct(D.scorecard.tiers_apparent[t].ltfu,2),
+      pct(D.scorecard.tiers_out_of_fold[t].ltfu,2), pct(D.scorecard.tiers_lodo[t].ltfu,2)]),
+    'The gradient survives both internal and geographic validation.');
+
+  const sv=D.scorecard.score_validation;
+  table('#tOps', ['Operating point','Patients flagged','Sensitivity','Specificity','PPV','NPV','Number needed to evaluate'],
+    D.scorecard.operating_points.map(o=>[o.label, pct(o.flag,1), n2(o.sens), n2(o.spec), pct(o.ppv,1), pct(o.npv,1), n2(o.nne,1)]),
+    `Cross-validated. The integer score itself reaches AUC ${n2(sv.score_out_of_fold.auc,3)} out of fold and ${n2(sv.score_lodo.auc,3)} under leave-one-district-out, against ${n2(sv.gb_full_model_auc,3)} for the full gradient boosting model.`);
+
+  // ---- spatial ----
+  const mo=D.spatial.moran, wn={knn5:'5 nearest neighbours',knn6:'6 nearest neighbours',queen:'Queen contiguity'};
+  table('#tMoran', ['Neighbourhood definition','Moran I','Expected I','z','p'],
+    Object.keys(mo).map(k=>[wn[k]||k, n2(mo[k].I,4), n2(mo[k].EI,4), n2(mo[k].z,2), n2(mo[k].p,3)]),
+    'No statistically significant spatial autocorrelation was detected under any definition.');
+  $('#lisaNote').innerHTML = 'Local indicators reaching nominal significance: ' +
+    D.spatial.lisa_significant.map(x=>`${x.kab} <span class="mut">(${x.quad}, p&nbsp;${n2(x.p,3)})</span>`).join(', ') +
+    '. With 27 areas tested at the five percent level this count is on par with chance.';
+
+  // ---- feature selection ----
+  const sc=D.feature_selection.scenarios, fp=D.feature_selection.features_per_scenario;
+  table('#tScen', ['Scenario','Predictors','Median AUC','AUC range','Mean calibration gap','Areas below 0.75'],
+    Object.keys(sc).map(k=>[k, (fp[k]||[]).length, n2(sc[k].median_auc,3),
+      `${n2(sc[k].min_auc,3)} to ${n2(sc[k].max_auc,3)}`, n2(sc[k].mean_absgap), sc[k].n_poor]));
+  const lk=D.feature_selection.leakage_check;
+  $('#leakNote').innerHTML = `Selection performed within each training fold rather than on the whole dataset `+
+    `selected the same ${lk.k_selected} features in all folds `+
+    `(${lk.features_leaky.join(', ')}), and cross-validated AUC is unchanged: `+
+    `${n2(lk.auc_proper,4)} against ${n2(lk.auc_leaky,4)}.`;
+
+  // ---- learning curve ----
+  const lc=D.learning_curve.curves, names=Object.keys(lc);
+  table('#tCurve', ['Training set size'].concat(names),
+    lc[names[0]].map((row,i)=>[n0(row.size)].concat(names.map(nm=>n2(lc[nm][i].auc,4)))),
+    `Fixed test set of ${n0(D.learning_curve.test_size)} cases.`);
+
+  // ---- reproducibility ----
+  const R=D.reproducibility;
+  table('#tRepro', ['Item','Specification'],
+    [['Language','Python '+R.python],
+     ['Libraries', Object.entries(R.libraries).map(([k,v])=>`${k} ${v}`).join(', ')],
+     ['Random seed', R.seed],
+     ['Cross-validation', R.cross_validation],
+     ['Model comparison subsample', n0(R.subsamples.model_comparison)+' cases'],
+     ['Decile and calibration figures', n0(R.subsamples.decile_and_calibration_figures)+' cases'],
+     ['Leave-one-district-out', R.subsamples.leave_one_district_out],
+     ['Bootstrap resamples', n0(R.bootstrap_resamples)],
+     ['Permutations', n0(R.permutations)],
+     ['Spatial statistics', R.spatial_statistics]]);
+
+  // ---- figures ----
+  const figs=[[1,'Map of the pre-treatment loss rate by district and city'],
+    [2,'Study process flow, from data source to evaluation'],
+    [3,'Comparison of five explainable algorithms on ROC AUC and PR AUC'],
+    [4,'ROC curves of each algorithm'],
+    [5,'Distribution of ROC AUC across cross-validation folds'],
+    [6,'Predictor importance by gradient boosting gain'],
+    [7,'Actual loss rate per decile of prediction score'],
+    [8,'Calibration of the gradient boosting model'],
+    ['8a','Calibration curves for all five algorithms, with and without balanced class weights'],
+    [9,'Adjusted odds ratio per district and city'],
+    [10,'Decision tree with statistical feature selection'],
+    [11,'Decision tree with clinical feature selection'],
+    [12,'Leave-one-district-out AUC for the three feature selection scenarios'],
+    [13,'Map of transportable model fit per district and city'],
+    [14,'Cross-area calibration, observed versus mean predicted risk'],
+    [15,'Leave-one-district-out AUC per district and city'],
+    [16,'Per-class recall in the six lowest-AUC areas'],
+    [17,'Notification rate against leave-one-district-out AUC'],
+    [18,'Learning curve for logistic regression and gradient boosting'],
+    [19,'Decision curve analysis, net benefit'],
+    [20,'Observed loss rate by scorecard risk tier']];
+  $('#figs').innerHTML = figs.map(([k,c])=>
+    `<figure><img src="figs/figure${k}.png" alt="Figure ${k}. ${c}" loading="lazy">`+
+    `<figcaption><strong>Figure ${k}.</strong> ${c}</figcaption></figure>`).join('');
+
+  $('#foot').innerHTML = `Companion data page for the article in ${m.journal}. `+
+    `Aggregate results only — no individual patient record is published here. `+
+    `Individual-level surveillance data remain under the custody of the Provincial Health Office of West Java `+
+    `and the Ministry of Health of the Republic of Indonesia.`;
+}).catch(e=>{
+  document.querySelector('main .wrap').insertAdjacentHTML('afterbegin',
+    '<section><h2>Could not load the data file</h2><p class="lede">'+e+'</p></section>');
+});
+</script>
+</body>
+</html>
