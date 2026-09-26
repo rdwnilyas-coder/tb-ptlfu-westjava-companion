@@ -212,7 +212,7 @@ footer .wrap{padding-block:26px 34px}
       evaluated on the data that produced its own correction. This analysis has no figure in the
       article.</p>
     <div class="scroll"><table id="tRecalSummary"></table></div>
-    <div class="scroll"><table id="tRecal"></table></div>
+    <p class="note" id="recalNote"></p>
   </section>
 
   <section id="scorecard">
@@ -403,12 +403,13 @@ fetch('data/companion.json').then(r=>r.json()).then(D=>{
     'Evaluated out of fold within each area. Discrimination is unchanged: the largest change in any area AUC is 0.001.');
   const rr = D.local_recalibration.per_district.filter(r=>r.evaluated)
     .sort((a,b)=>Math.abs(b.before.gap)-Math.abs(a.before.gap));
-  table('#tRecal', ['Area','AUC','Gap before (pp)','Gap after (pp)','Brier before','Brier after'],
-    rr.map(r=>[r.area, n2(r.auc,3),
-      (r.before.gap>0?`<span class="hi">+${n2(r.before.gap)}</span>`:n2(r.before.gap)),
-      `<span class="ok">${n2(r.intercept_only.gap)}</span>`,
-      n2(r.before.brier,4), n2(r.intercept_only.brier,4)]),
-    'Sorted by the size of the original calibration gap.');
+  const worstThree = rr.slice(0,3).map(r=>
+    `${r.area} from ${r.before.gap>0?'+':''}${n2(r.before.gap)} to ${n2(r.intercept_only.gap)}`).join(', ');
+  $('#recalNote').innerHTML =
+    `The areas that gain most are exactly those the provincial model fits worst: ${worstThree} `+
+    `percentage points. Discrimination is untouched, as expected for a monotone correction, so `+
+    `recalibration repairs decisions that rest on absolute risk but does not help areas whose `+
+    `problem is weak discrimination. Per-area values are in the downloadable file.`;
 
   // ---- scorecard points (kept: the table is the instrument) ----
   const labels = {sex:'Sex', hiv:'HIV status', dx:'Diagnosis method', fac:'Facility type', riw:'Treatment history', age:'Age band'};
